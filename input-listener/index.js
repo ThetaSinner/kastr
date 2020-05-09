@@ -1,3 +1,8 @@
+require("@babel/register");
+const app = require('./app');
+
+app.runApp()
+
 const winston = require('winston')
 
 const logger = winston.createLogger({

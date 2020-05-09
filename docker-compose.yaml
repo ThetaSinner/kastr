@@ -24,3 +24,8 @@ services:
     volumes:
     - ./input-listener:/app
     - ./logs/input-listener:/var/log
+    environment:
+      - MINIO_HOST=minio
+      - MINIO_ACCESS_KEY=minioadmin
+      - MINIO_SECRET_KEY=minioadmin
+      - INPUT_BUCKET_NAME=input
