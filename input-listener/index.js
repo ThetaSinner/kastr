@@ -1,20 +1,12 @@
 require("@babel/register");
 const app = require('./app');
 
-app.runApp()
+try {
+    (async () => {
+        await app.runApp()
+    })();
+} catch (e) {
+    console.error(e);
+    process.exit(1)
 
-const winston = require('winston')
-
-const logger = winston.createLogger({
-    level: 'info',
-    format: winston.format.json(),
-    defaultMeta: { service: 'input-listener' },
-    transports: [
-        new winston.transports.Console({
-            level: 'info',
-            format: winston.format.simple()
-        })
-    ]
-});
-
-logger.info('testing')
+}

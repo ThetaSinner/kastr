@@ -1,10 +1,10 @@
 import { initialiseAppEnvironment } from "./init-app-env";
+import { logger } from './logger';
+import {startPdfListener} from "./pdf-listener";
 
-export function runApp() {
-    initialiseAppEnvironment().then(msg => {
-        console.log('Application initialisation complete:', msg);
-    }).catch(err => {
-        console.error(err);
-        process.exit(1)
-    });
+export async function runApp() {
+    const message = await initialiseAppEnvironment();
+    logger.info('Application initialisation complete:', message);
+
+    startPdfListener();
 }
