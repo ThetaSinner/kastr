@@ -1,0 +1,11 @@
+{
+  "name": "publisher-listing",
+  "version": "1.0.0",
+  "description": "Fetch a list of publishers from Wikipedia",
+  "main": "index.js",
+  "author": "ThetaSinner",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "x-ray": "^2.3.4"
+  }
+}
